@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chnur Calculator</title>
+    <style>
+        /* Calculator Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator-wrapper {
+            text-align: center;
+            width: 300px;
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .calculator {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .calculator-screen {
+            background-color: #555;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 2em;
+            height: 60px;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: right;
+            width: 100%;
+        }
+
+        .calculator-screen:focus {
+            outline: none;
+        }
+
+        .calculator-keys {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .calculator-key {
+            background-color: #666;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .calculator-key:hover {
+            background-color: #444;
+            cursor: pointer;
+        }
+
+        .operator {
+            background-color: #FF8C00;
+        }
+
+        .decimal {
+            background-color: #FFD700;
+        }
+
+        .clear {
+            background-color: #DC143C;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator-wrapper">
+        <div class="header">Chnur</div>
+        <div class="calculator"><input type="text" class="calculator-screen" value="" readonly="">
+            <div class="calculator-keys"><button class="calculator-key clear">C</button> <button class="calculator-key operator">+</button> <button class="calculator-key operator">-</button> <button class="calculator-key operator">*</button> <button class="calculator-key">7</button> <button class="calculator-key">8</button> <button class="calculator-key">9</button> <button class="calculator-key operator">/</button> <button class="calculator-key">4</button> <button class="calculator-key">5</button> <button class="calculator-key">6</button> <button class="calculator-key decimal">.</button> <button class="calculator-key">1</button> <button class="calculator-key">2</button> <button class="calculator-key">3</button> <button class="calculator-key">=</button> <button class="calculator-key">0</button></div>
+        </div>
+    </div>
+    <script>
+        function clearScreen() {
+            document.querySelector('.calculator-screen').value = '';
+        }
+        
+        function append(value) {
+            document.querySelector('.calculator-screen').value += value;
+        }
+        
+        function calculate() {
+            let result = eval(document.querySelector('.calculator-screen').value);
+            document.querySelector('.calculator-screen').value = result;
+        }
+    </script>
+
+<div style="color: red">Created with <a href="https://wordtohtml.net/">WordToHTML.net</a> trial.</div>
+</body>
+
+</html>
